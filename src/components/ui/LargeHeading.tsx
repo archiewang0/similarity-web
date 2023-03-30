@@ -1,7 +1,7 @@
 
 import {  forwardRef, HTMLAttributes } from 'react'
 import {cva, VariantProps} from "class-variance-authority"
-import { cn } from '@/app/lib/utils'
+import { cn } from '@/lib/utils'
 
 // 第一個參數 會直接變成該 component 的classname 之後的變數可以做細微的調整
 const headingVariants = cva(
