@@ -7,7 +7,7 @@ interface ProvidersProps {
 }
 
 const Providers = ({children} :{children: ReactNode} ) => {
-  return <ThemeProvider>
+  return <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
     <SessionProvider>{children}</SessionProvider>
   </ThemeProvider>
 }
