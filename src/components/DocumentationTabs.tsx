@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Tabs , TabsList , TabsTrigger ,TabsContent } from './ui/Tabs'
-
+import Code from './Code'
 interface DocumentationTabsProps {
   
 }
@@ -11,6 +11,11 @@ const DocumentationTabs: FC<DocumentationTabsProps> = ({}) => {
         <TabsTrigger value='nodejs'>NodeJs</TabsTrigger>
         <TabsTrigger value='python'>Python</TabsTrigger>
     </TabsList>
+    <TabsContent value='nodejs'>
+    {/* <SimpleBar></SimpleBar> */}
+    <Code />
+    </TabsContent>
+    <TabsContent value='python'></TabsContent>
   </Tabs>
 }
 
