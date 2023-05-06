@@ -1,0 +1,97 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// 這後端的套件 
+// Prisma的主要作用是簡化後端與數據庫之間的交互過程，使開發人員能夠使用一種高級的、面向對象的API來進行數據庫操作，
+// 而不必直接使用SQL語句。Prisma生成的代碼可以幫助開發人員避免常見的SQL錯誤，並且可以提供額外的安全性和效率優化功能。
+// 總之，Prisma是一個強大的後端工具，可以簡化數據庫操作，但它並不能讓前端直接與數據庫溝通。
+// 前端需要通過後端提供的API或其他介面來進行數據庫操作。
+
+// 使用方式像是 typescript 定義型別
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  relationMode   = "prisma"
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+
+  apiKey   ApiKey[]
+  apiKeyId String?
+  image    String?
+  accounts Account[]
+  sessions Session[]
+}
+
+
+model ApiKey{
+  id      String  @id @default(cuid())
+  key     String  @unique
+  enabled Boolean @default(true)
+  User    User    @relation(fields: [userId], references: [id])
+  userId  String
+
+  requests ApiRequest[]
+
+  @@unique([userId, key, enabled])
+}
+
+model ApiRequest {
+  id        String   @id @default(cuid())
+  timestamp DateTime @default(now())
+  method    String
+  path      String
+  status    Int
+  duration  Int
+
+  usedApiKey String
+
+  ApiKey   ApiKey @relation(fields: [apiKeyId], references: [id])
+  apiKeyId String
+
+  @@index([apiKeyId, timestamp])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}

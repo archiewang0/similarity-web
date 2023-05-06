@@ -16,17 +16,10 @@ export const metaData: Metadata = {
 const page: FC<pageProps> = ({}) => {
   return <div className=' container max-w-7xl mx-auto mt-12'>
     <div className='flex flex-col items-center gap-6'>
-        <LargeHeading>
-            Make requirst
-        </LargeHeading>
+        <LargeHeading>Make requirst</LargeHeading>
+        <Paragraph>api/v1/similarity</Paragraph>
 
-        <Paragraph>
-          api/v1/similarity
-        </Paragraph>
-
-        <DocumentationTabs>
-
-        </DocumentationTabs>
+        <DocumentationTabs></DocumentationTabs>
     </div>
   </div>
 }

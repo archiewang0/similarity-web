@@ -1,21 +1,30 @@
+"use client"
 import { FC } from 'react'
 import { Tabs , TabsList , TabsTrigger ,TabsContent } from './ui/Tabs'
 import Code from './Code'
+import { nodejs , python} from '@/helpers/documentation-code'
+import SimpleBar from 'simplebar-react'
+import 'simplebar-react/dist/simplebar.min.css'
 interface DocumentationTabsProps {
   
 }
 
 const DocumentationTabs: FC<DocumentationTabsProps> = ({}) => {
-  return <Tabs>
-    <TabsList defaultValue='nodejs' className=' max-w-2xl w-full'>
+  return <Tabs defaultValue='nodejs' className='max-w-2xl w-full'>
+    <TabsList>
         <TabsTrigger value='nodejs'>NodeJs</TabsTrigger>
         <TabsTrigger value='python'>Python</TabsTrigger>
     </TabsList>
     <TabsContent value='nodejs'>
-    {/* <SimpleBar></SimpleBar> */}
-    <Code />
+      <SimpleBar>
+        <Code animated language='javascript' code={nodejs} show/>
+      </SimpleBar>
     </TabsContent>
-    <TabsContent value='python'></TabsContent>
+    <TabsContent value='python'>
+      <SimpleBar>
+        <Code animated language='python' code={python} show/>
+      </SimpleBar>
+    </TabsContent>
   </Tabs>
 }
 
