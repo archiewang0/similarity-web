@@ -27,9 +27,12 @@ const page = async () => {
   return (
     <div className=' max-w-7xl mx-auto mt-16'>
         {apiKey ? (
+            // ApiDashboard 是在Server端產生的component
             // @ts-expect-error Server Component
             <ApiDashboard/>
+            
             ) : 
+            // 如果目前沒有 api key 的話就會出現 RequestApiKey 的頁面
             <RequestApiKey/>
         }
     </div>

@@ -57,6 +57,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
         打通db 我們才可以連線
 
 - https://planetscale.com/ db? db常常一段時間會有問題, 可能是免費？
+    - 經過一段時候 會斷開connet, 需要新建立 password 並且到 root/.env 更換 DATABASE_URL? 這問題需要再解決
+    - 更換過 db的url 之後需要在 重新 yarn dev 執行
+
 - google cloude console ?用在註冊google登入
     - 選擇menu > 選擇 "apis和服務" > 選擇"憑證" > 
         點擊"建立憑證" > 選擇"OAuth 用戶端 ID" > 點選"設定同意畫面" > 點選"外部" > 填好申請資料 > 

@@ -10,6 +10,7 @@ import LargeHeading from './ui/LargeHeading'
 import Paragraph from './ui/Paragraph'
 import { Input } from './ui/Input'
 import Table from './ui/Table'
+import ApiKeyOptions from './ApiKeyOptions'
 
 interface ApiDashboardProps {
   
@@ -45,7 +46,7 @@ const ApiDashboard = async () => {
             <Input className='w-fit truncate' readOnly value={activeApiKey.key} />
 
             {/* 新增可以選項 可以進行新增api 或是撤回api */}
-            {/* <ApiKeyOptions apiKeyKey={activeApiKey.key} /> */}
+            <ApiKeyOptions apiKeyKey={activeApiKey.key} />
         </div>
     
         <Paragraph className='text-center md:text-left mt-4 -mb-4'>
