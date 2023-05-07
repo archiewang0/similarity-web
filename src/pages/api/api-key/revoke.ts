@@ -6,6 +6,8 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { getServerSession } from 'next-auth'
 import { z } from 'zod'
 
+// 這裡會被 fe 的一些method 做一些fetch的動作
+// 所以這裡也會跟資料庫進行一些資料交換
 const handler = async (
   req: NextApiRequest,
   res: NextApiResponse<RevokeApiData>

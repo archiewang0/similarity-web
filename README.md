@@ -67,5 +67,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
         到達資料表單 下拉選項選擇"網路應用程式"(這是針對web的選項) 以及設定該 auth 的名稱以及 授權的domain 範圍 >
         送出表單之後 返回"憑證" 會顯示剛剛設定的 "OAuth 用戶端 ID" 出現在 "憑證" 的list中的 "OAuth 2.0 用戶端 ID" 地方 >
 - nanoid ? 產生id套件
-- zod ? 不確定是啥
+- zod 
+    - 撰寫 type schema 之後針對不確定的資料(fetch 回傳的respond) 進行型別確認,
+        也可以將 schema 直接轉換成 型別, 供給需要的資料使用
+
 - date-fns ? 時間套件?
+- openai 
+    - 需要進入 https://platform.openai.com/ 並且新增scerect key, 之後複製該key, 就可以到 
+    - root/.env OPENAI_API_KEY貼上複製的key

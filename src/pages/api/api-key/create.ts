@@ -8,7 +8,8 @@ import {nanoid} from "nanoid"
 // nanoid 產生id 套件？
 import z from "zod"
 
-
+// 這裡會被 fe 的一些method 做一些fetch的動作
+// 所以這裡也會跟資料庫進行一些資料交換
 const handler = async (
     req: NextApiRequest,
     res: NextApiResponse<CreateApiData>
@@ -56,60 +57,3 @@ const handler = async (
   }
   
   export default withMethods(['GET'], handler)
-
-// const handler = async (
-//     req: NextApiRequest,
-//     res: NextApiResponse<CreateApiData>
-// )=>{
-//     try{
-//         const user = await getServerSession(req,res,authOptions).then((res)=>res?.user)
-//         // const user = await getServerSession(req, res, authOptions).then(
-//         //           (res) => res?.user
-//         //         )
-
-//         if(!user) {
-//             return res.status(401).json({
-//                 error: '未經授權 無法執行後續動作',
-//                 createdApiKey: null
-//             })
-//         }
-
-//         const existingApiKey = await db.apiKey.findFirst({
-//             where: {userId: user.id , enabled:true}
-//         })
-
-//         if(existingApiKey) {
-//             return res.status(400).json({
-//                 error: '你已經有可使用的API key',
-//                 createdApiKey: null
-//             })
-//         }
-
-//         const createdApiKey = await db.apiKey.create({
-//             data: {
-//                 userId: user.id,
-//                 key: nanoid(32),
-//             },
-//         })
-
-//         return res.status(200).json({error:null , createdApiKey})
-//     } catch(err){
-//         if(err instanceof z.ZodError) {
-//             return res.status(400).json({
-//                 error: err.issues,
-//                 createdApiKey: null
-//             })
-//         }
-
-//         return res.status(500).json({
-//             error: '伺服器錯誤',
-//             createdApiKey: null
-//         })
-//     }
-// }
-
-// // export default handler
-// export default withMethods(['GET'], handler)
-
-
-// 

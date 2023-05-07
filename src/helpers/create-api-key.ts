@@ -1,6 +1,7 @@
 import { CreateApiData } from "@/types/api/key"
 
 export async function createApiKey() {
+    // 這裡會去 吃page/api 內的資料
     const res = await fetch('/api/api-key/create')
     const data = (await res.json()) as CreateApiData
 

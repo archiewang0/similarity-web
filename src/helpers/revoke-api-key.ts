@@ -4,6 +4,7 @@ export async function revokeApiKey() {
       headers: {
         'Content-Type': 'application/json',
       },
+      
       // POST request to prevent CSRF in combination with SameSite LAX cookies, see
       // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite
     })
