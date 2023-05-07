@@ -1,21 +1,18 @@
-import { NextAuthOptions } from "next-auth";
 import { db } from "@/lib/db";
 import {PrismaAdapter} from "@next-auth/prisma-adapter"
+import { NextAuthOptions } from "next-auth";
 import GoogleProvier from "next-auth/providers/google"
-// import { PrismaClient } from "@prisma/client";
 
-// const prisma = new PrismaClient()
-
-function getGoogleCredentials() {
+function getGoogleCredentials(): { clientId: string; clientSecret: string } {
     const clientId = process.env.GOOGLE_CLIENT_ID
     const clientSecret = process.env.GOOGLE_CLIENT_SECRET
 
     if(!clientId || clientId.length === 0){
-        throw new Error('No clientId for google provider set')
+        throw new Error('Missing GOOGLE_CLIENT_ID')
     }
 
     if(!clientSecret || clientSecret.length === 0){
-        throw new Error('No clientSerect for google provider set')
+        throw new Error('Missing GOOGLE_CLIENT_SECRET')
     }
 
     return {clientId ,clientSecret}

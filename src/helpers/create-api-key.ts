@@ -1,4 +1,4 @@
-import { CreateApiData } from "@/types/api"
+import { CreateApiData } from "@/types/api/key"
 
 export async function createApiKey() {
     const res = await fetch('/api/api-key/create')

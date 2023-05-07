@@ -45,6 +45,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - tailwind
 - nextAuth
 - nextTheme
+- mui 
 - cva(class-variance-authority)
 - lucide-react ? 
 - radix-ui ? ui library
@@ -53,11 +54,15 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     - yarn prisma db push
         可以把 prisma 資料table 推上去 planetscale 這個db中
     - yarn prisma generate
+        打通db 我們才可以連線
 
-- https://planetscale.com/ db 
+- https://planetscale.com/ db? db常常一段時間會有問題, 可能是免費？
 - google cloude console ?用在註冊google登入
     - 選擇menu > 選擇 "apis和服務" > 選擇"憑證" > 
         點擊"建立憑證" > 選擇"OAuth 用戶端 ID" > 點選"設定同意畫面" > 點選"外部" > 填好申請資料 > 
         返回"憑證" > 再次點擊"建立憑證" > 再次選擇"OAuth 用戶端 ID" >
         到達資料表單 下拉選項選擇"網路應用程式"(這是針對web的選項) 以及設定該 auth 的名稱以及 授權的domain 範圍 >
         送出表單之後 返回"憑證" 會顯示剛剛設定的 "OAuth 用戶端 ID" 出現在 "憑證" 的list中的 "OAuth 2.0 用戶端 ID" 地方 >
+- nanoid ? 產生id套件
+- zod ? 不確定是啥
+- date-fns ? 時間套件?

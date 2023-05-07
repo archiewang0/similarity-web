@@ -63,7 +63,7 @@ const RequestApiKey: FC<RequestApiKeyProps> = ({}) => {
           <Input readOnly value={apikey?? ""} placeholder="Request API會顯示在這裡"/>
         </div>
         
-        <div className='mt-3 sm:mt-0 sm:ml-4 sm:flex-shrink-0'>
+        <div className='mt-3 flex justify-center sm:mt-0 sm:ml-4 sm:flex-shrink-0'>
           <Button disabled={!!apikey} isLoading={isCreating} >
             Request Key
           </Button>
