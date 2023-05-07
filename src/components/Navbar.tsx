@@ -17,7 +17,7 @@ const Navbar = async ({}) => {
     const session = await getServerSession(authOptions)
     
     // 'use client' 的話該console 會呈現在 client端
-    // console.log(session)
+    console.log('session!!!!!!!!!: ',session)
     
     // dark: 是切換成dark mode 時候呈現出來
     return <div className='fixed backdrop-blur-sm bg-white/75 dark:bg-slate-900 z-50 top-0 left-0 right-0 h-20 broder-b border-slate-300
