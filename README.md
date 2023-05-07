@@ -47,8 +47,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - nextTheme
 - mui 
 - cva(class-variance-authority)
-- lucide-react ? 
 - radix-ui ? ui library
+- upstash ?數據管理平台
+
+- lucide-react ? 
 - jwt
 - prisma ? 與db溝通的工具?
     - yarn prisma db push
@@ -75,3 +77,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - openai 
     - 需要進入 https://platform.openai.com/ 並且新增scerect key, 之後複製該key, 就可以到 
     - root/.env OPENAI_API_KEY貼上複製的key
+    - 一段時間要重複產生serect key 來替換, 就有的key 會消失
