@@ -1,4 +1,4 @@
-import { FC } from 'react'
+// import { FC } from 'react'
 import { getServerSession } from 'next-auth'
 import Link from 'next/link'
 import { buttonVariants } from './ui/Button'
@@ -6,9 +6,9 @@ import SignInButton from './SignInButton'
 import SignOutButton from './SignOutButton'
 import ThemeToggle from './ThemeToggle'
 import { authOptions } from '@/lib/auth'
-interface NavbarProps {
+// interface NavbarProps {
   
-}
+// }
 
 // 當登入完成之後
 const Navbar = async ({}) => {

@@ -1,12 +1,12 @@
 
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import LargeHeading from '@/components/ui/LargeHeading'
 import Paragraph from '@/components/ui/Paragraph'
 import Link from 'next/link'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 // 定義該頁面的seo
 export const metadata: Metadata = {
