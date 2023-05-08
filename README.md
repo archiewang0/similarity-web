@@ -78,3 +78,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     - 需要進入 https://platform.openai.com/ 並且新增scerect key, 之後複製該key, 就可以到 
     - root/.env OPENAI_API_KEY貼上複製的key
     - 一段時間要重複產生serect key 來替換, 就有的key 會消失
+
+- node v18.0.0 yarn 1.22.19
