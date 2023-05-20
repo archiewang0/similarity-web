@@ -14,3 +14,9 @@
 .dark .simplebar-scrollbar::before{
     background-color: white;
 }
+
+#menuWrapper:hover #manBody{
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+}

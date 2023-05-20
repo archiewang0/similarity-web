@@ -1,11 +1,12 @@
-import { ChevronLeft, ChevronRight, Moon, Sun, Laptop } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Moon, Sun, Laptop , Menu } from 'lucide-react'
 
-export const Icons = {
+const Icons = {
   ChevronLeft,
   ChevronRight,
   Sun,
   Moon,
   Laptop,
+  Menu,
 }
 
 export default Icons

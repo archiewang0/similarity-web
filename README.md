@@ -48,7 +48,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - mui 
 - cva(class-variance-authority)
 - radix-ui ? ui library
-- upstash ?數據管理平台
 
 - lucide-react ? 
 - jwt
@@ -78,5 +77,21 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     - 需要進入 https://platform.openai.com/ 並且新增scerect key, 之後複製該key, 就可以到 
     - root/.env OPENAI_API_KEY貼上複製的key
     - 一段時間要重複產生serect key 來替換, 就有的key 會消失
+- Redis 
+- upstash 
+    - 是託管的Redis服務供應方, 建立在Redis的數據庫基礎上
+    - 提供安全性以及權限控制機制
+
+
+- env檔案
+    使用到的變數
+    - NEXTAUTH_SECRET (將auth的資料加密)
+    - NEXTAUTH_URL=http://localhost:3000/
+    - GOOGLE_CLIENT_ID (在google console取得)
+    - GOOGLE_CLIENT_SECRET (在google console取得)
+    - DATABASE_URL (使用planetscaley作為db, 可以使用mysql語法查看資料)
+    - OPENAI_API_KEY (openai console取得)
+    - REDIS_URL (Upstash console 取得)
+    - REDIS_SECRET (Upstash console 取得)
 
 - node v18.0.0 yarn 1.22.19

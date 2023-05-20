@@ -17,6 +17,21 @@ axios.request(options).then(function (response) {
     console.error(error);
 });`
 
+export const vanillajs = `fetch('https://similarity-web.vercel.app/api/v1/similarity',{
+  method: "POST",
+  headers: {
+      "content-type": "application/json" ,
+      "Authorization": "YOUR_API_KEY",
+  },
+  body: JSON.stringify({
+    text1: "First text" , 
+    text2: "Second text"
+  })
+}).then(d=>d.json())
+.then(d=>console.log(d))
+`
+
+
 export const python = `import requests
 url = 'https://similarityapi.com/api/v1/similarity'
 api_key = 'YOUR_API_KEY'

@@ -4,11 +4,13 @@ import { NextResponse } from 'next/server'
 import { Ratelimit } from '@upstash/ratelimit'
 import { Redis } from '@upstash/redis'
 
+// 將資料存取在 Redis
 const redis = new Redis({
   url: process.env.REDIS_URL,
   token: process.env.REDIS_SECRET,
 })
 
+// 限制速限
 const ratelimit = new Ratelimit({
   redis: redis,
   limiter: Ratelimit.slidingWindow(50, '1 h'),
@@ -20,6 +22,7 @@ export default withAuth(
 
     // Manage rate limiting
     if (pathname.startsWith('/api')) {
+      // localhost 的ip
       const ip = req.ip ?? '127.0.0.1'
       try {
         const { success } = await ratelimit.limit(ip)

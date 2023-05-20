@@ -6,6 +6,8 @@ import SignInButton from './SignInButton'
 import SignOutButton from './SignOutButton'
 import ThemeToggle from './ThemeToggle'
 import { authOptions } from '@/lib/auth'
+import MobileMenu from './MobileMenu'
+
 // interface NavbarProps {
   
 // }
@@ -27,9 +29,11 @@ const Navbar = async ({}) => {
                 Text Similarity 1.0
             </Link>
 
-            <div className=' md:hidden'>
+            {/* <div className=' md:hidden'>
                 <ThemeToggle></ThemeToggle>
-            </div>
+            </div> */}
+
+            <MobileMenu session={session}/>
 
             <div className=' hidden md:flex gap-4'>
                 <ThemeToggle></ThemeToggle>
